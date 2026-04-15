@@ -1,0 +1,21 @@
+{
+  "name": "catalog-api-tests",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Playwright E2E test suite for catalog-api",
+  "scripts": {
+    "install:all": "npm install && cd frontend && npm install",
+    "test": "playwright test",
+    "test:api": "playwright test tests/api",
+    "test:ui": "playwright test tests/ui",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:report": "playwright show-report",
+    "test:ci": "CI=true playwright test",
+    "setup": "npm run install:all && npx playwright install --with-deps chromium"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.44.0",
+    "@types/node": "^20.0.0"
+  }
+}
